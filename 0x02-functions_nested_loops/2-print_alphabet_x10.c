@@ -1,8 +1,6 @@
 #include "main.h"
 /**
- * main - Used to execute _putchar
- *
- * Description: Prints alphabet ten times
+ * print_alphabet_x10 - print lowercase alphabet
  */
 void print_alphabet_x10(void)
 {

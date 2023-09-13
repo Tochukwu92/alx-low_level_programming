@@ -19,7 +19,7 @@ int main(void)
 		}
 		n = y + z;
 		y = z;
-		z = n
+		z = n;
 	}
 	printf("%lu\n", sum);
 	return (0);

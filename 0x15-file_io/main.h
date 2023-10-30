@@ -6,7 +6,8 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-
+char *create_buffer(char *file);
+void close_file(int num);
 ssize_t read_textfile(const char *filename, size_t letters);
 int _putchar(char c);
 int create_file(const char *filename, char *text_content);

@@ -13,9 +13,9 @@ void close_file(int num);
 
 char *create_buffer(char *file)
 {
-	char buf[1024];
+	char *buf;
 
-	buf = malloc(sizeof(char *));
+	buf = malloc(sizeof(char) * 1024);
 
 	if (buf == NULL)
 	{

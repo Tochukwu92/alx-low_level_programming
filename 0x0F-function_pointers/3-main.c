@@ -23,12 +23,6 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	/* Handle division by zero error */
-	if (num2 == 0 && (opt[0]== '/' || opt[0] == '%'))
-	{
-		puts("Error");
-		exit(100);
-	}
 
 	result = get_op_func(opt)(num1, num2);
 	printf("%d\n", result);

@@ -9,21 +9,31 @@
  * Return: 0
  */
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int (*prt)(int, int);
+	int num1, num2, result;
+	char *opt;
 
-	if (argc != 4)
+	num1 = atoi(av[1]);
+	opt = av[2];
+	num2 = atoi(av[3]);
+
+	/* Check if arg exceed 4 or invalid operator */
+	if (ac != 4 || get_op_func(opt) == NULL)
 	{
-		printf("Error\n");
+		puts("Error");
 		exit(98);
 	}
-	prt = get_op_func(argv[2]);
-	if (!prt)
+
+	/* Handle division by zero error */
+	if (num2 == 0 && (opt[0]== '/' || opt[0] == '%'))
 	{
-		printf("Error\n");
-		exit(99);
+		puts("Error");
+		exit(100);
 	}
-	printf("%d\n", prt(atoi(argv[1]), atoi(argv[3])));
-	return (0);
+
+	result = get_op_func(opt)(num1, num2);
+	printf("%d\n", result);
+
+	return 0;
 }
